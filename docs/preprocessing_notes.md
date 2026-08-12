@@ -91,6 +91,14 @@ find "$RAW_FASTQ_DIR" -name '*.fastq.gz' | head
 and adjust the `find` pattern in that script to match. Expect `2 x lanes x pools`
 files per library type.
 
+## Disk space
+
+Cell Ranger output is large: budget roughly 20-50 GB per pool without BAMs, and
+several times that with `CREATE_BAM=true`. The references add another 15-30 GB.
+Check your quota before submitting a large batch of pools, since a job that
+runs out of space partway through leaves an incomplete run directory that has
+to be deleted and started again.
+
 ## Reruns
 
 `04_submit_all.bash` skips any pool that already has an `outs` directory, so it
