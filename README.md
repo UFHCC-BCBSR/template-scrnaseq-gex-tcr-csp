@@ -506,6 +506,10 @@ reference. Mouse mitochondrial genes are `mt-*`, human are `MT-*`.
 **An R script cannot find `config.R`.** Run it from inside the repository; the
 scripts locate the config by walking up the directory tree.
 
+**A job fails immediately with an account or QoS error.** `SLURM_ACCOUNT` and
+`SLURM_QOS` in `config/config.env` do not match an allocation you belong to.
+Check with `sacctmgr show associations user=$USER`.
+
 More detail in `docs/preprocessing_notes.md`.
 
 ---
