@@ -36,6 +36,8 @@ N_VARIABLE_FEATURES <- 2000
 N_DIMS              <- 30
 CLUSTER_RESOLUTION  <- 0.5
 
+set.seed(42)  # Harmony, UMAP and clustering are stochastic; fix for reruns
+
 
 PER_SAMPLE_OUTPUTS <- file.path(REPO_ROOT, "02_R", "per_sample_analysis", "analysis_outputs")
 OUT <- file.path(REPO_ROOT, "02_R", "integrated_analysis", "analysis_outputs")

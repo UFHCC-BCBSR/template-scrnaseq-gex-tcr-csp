@@ -35,6 +35,8 @@ N_VARIABLE_FEATURES <- 2000  # genes carried into PCA
 N_DIMS              <- 25    # PCs used for clustering and UMAP; see elbow plot
 CLUSTER_RESOLUTION  <- 0.5   # higher = more, smaller clusters
 
+set.seed(42)  # UMAP and clustering are stochastic; fix the seed so reruns match
+
 
 obj <- readRDS(file.path(OUTPUT_DIR, "objects", "03_with_vdj.rds"))
 
