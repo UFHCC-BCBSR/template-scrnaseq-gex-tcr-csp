@@ -45,6 +45,12 @@
 .Rhistory
 .RData
 .Rproj.user/
+.Renviron
+
+# Editor artefacts
+.vscode/
+*.swp
+*~
 
 # OS artefacts
 .DS_Store
