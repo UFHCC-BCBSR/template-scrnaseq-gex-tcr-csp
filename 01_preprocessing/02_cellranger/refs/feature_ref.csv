@@ -1,0 +1,32 @@
+# Feature reference for the CSP (Antibody Capture) library.
+#
+# REPLACE THE ROWS BELOW to match the antibody panel you actually used. The
+# sequences here are the first four TotalSeq-C hashtags (BioLegend C0301-C0304)
+# and are only a starting point.
+#
+# Get the correct barcode sequences from your antibody vendor's datasheet.
+# Using the wrong sequences means zero feature counts and failed demultiplexing.
+#
+# Columns:
+#   id            unique identifier; must match hashtag_id in config/samples.tsv
+#   name          display name shown in Cell Ranger output and Loupe
+#   read          which read the barcode is on (R2 for TotalSeq-C)
+#   pattern       where in the read the barcode sits; 5PNNNNNNNNNN(BC) is the
+#                 standard TotalSeq-C pattern (10 bases of handle, then the
+#                 barcode). Check your vendor docs if using another chemistry.
+#   sequence      the barcode nucleotide sequence
+#   feature_type  "Antibody Capture" for both hashtags and surface proteins
+#
+# Hashtags (used to demultiplex pooled specimens):
+id,name,read,pattern,sequence,feature_type
+HTO1,HTO1,R2,5PNNNNNNNNNN(BC),ACCCACCAGTAAGAC,Antibody Capture
+HTO2,HTO2,R2,5PNNNNNNNNNN(BC),GGTCGAGAGCATTCA,Antibody Capture
+HTO3,HTO3,R2,5PNNNNNNNNNN(BC),CTTGCCGCATGTCAT,Antibody Capture
+HTO4,HTO4,R2,5PNNNNNNNNNN(BC),AAAGCATTCTTCACG,Antibody Capture
+#
+# Surface protein antibodies, if your CSP library carries them as well.
+# Uncomment and edit. These are quantified per cell but are NOT used for
+# demultiplexing, so they must not appear in config/samples.tsv.
+#
+#CD4,CD4,R2,5PNNNNNNNNNN(BC),AACAAGACCCTTGAG,Antibody Capture
+#CD8a,CD8a,R2,5PNNNNNNNNNN(BC),TACCCGTAATAGCGT,Antibody Capture

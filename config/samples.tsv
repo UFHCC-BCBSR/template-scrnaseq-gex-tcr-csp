@@ -1,0 +1,42 @@
+# Sample sheet - EDIT THIS to describe your experiment, then delete these
+# comment lines or leave them (lines starting with # are ignored).
+#
+# One row per FINAL demultiplexed sample (i.e. per biological specimen).
+# If you pooled specimens and separated them with hashtags, that is several
+# rows sharing one pool.
+#
+# Columns (tab-separated, order matters):
+#
+#   pool         Name of the sequencing pool / Cell Ranger run this sample
+#                belongs to. One cellranger multi job is created per unique
+#                pool. If you did not pool, use one pool per sample.
+#   pool_prefix  The prefix of the fastq filenames for this pool, as delivered.
+#                For a file named 1-GEX_S1_L001_R1_001.fastq.gz the prefix is 1.
+#                Every sample in a pool shares the same prefix.
+#   hashtag_id   The hashtag that identifies this sample within its pool. Must
+#                match an id in 01_preprocessing/02_cellranger/refs/feature_ref.csv.
+#                Set to NA if USE_HASHTAG_DEMUX=false in config.env.
+#   sample_id    Unique name for this sample. This becomes the Cell Ranger
+#                per-sample output directory name, so keep it filesystem-safe:
+#                letters, numbers and underscores only.
+#   group        The analysis group this sample belongs to. The per-sample R
+#                pipeline is run once per group, and groups are then combined
+#                by the integrated analysis. Often this equals pool, but it can
+#                differ (e.g. group by tissue while pooling by batch).
+#   condition    The experimental condition, used as the main comparison
+#                variable in differential expression. Keep the exact same
+#                spelling across groups.
+#   replicate    Replicate number within condition and group.
+#
+# The example below is a two-pool, four-hashtag design: two conditions with
+# two replicates each, in each of two tissues. Replace it entirely.
+#
+pool	pool_prefix	hashtag_id	sample_id	group	condition	replicate
+POOL1	1	HTO1	POOL1_Control_1	TISSUE_A	Control	1
+POOL1	1	HTO2	POOL1_Control_2	TISSUE_A	Control	2
+POOL1	1	HTO3	POOL1_Treated_1	TISSUE_A	Treated	1
+POOL1	1	HTO4	POOL1_Treated_2	TISSUE_A	Treated	2
+POOL2	2	HTO1	POOL2_Control_1	TISSUE_B	Control	1
+POOL2	2	HTO2	POOL2_Control_2	TISSUE_B	Control	2
+POOL2	2	HTO3	POOL2_Treated_1	TISSUE_B	Treated	1
+POOL2	2	HTO4	POOL2_Treated_2	TISSUE_B	Treated	2

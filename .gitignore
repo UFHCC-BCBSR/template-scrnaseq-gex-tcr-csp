@@ -1,0 +1,51 @@
+# =============================================================================
+# Large data and generated outputs - keep these out of git
+# =============================================================================
+# Only small configuration and script files belong in version control. Cell
+# Ranger outputs and Seurat objects are far too large and are reproducible
+# from the code plus the raw data.
+
+# Cell Ranger references (tens of GB)
+01_preprocessing/02_cellranger/refs/refdata-*/
+
+# Fastq symlink directories
+01_preprocessing/02_cellranger/symlinks/
+
+# Cell Ranger run outputs (the config and sbatch files inside *_run/ ARE
+# tracked; only the large output tree is ignored)
+**/*_run/*_multi/
+
+# The real fastq list is generated per project; the example is tracked
+01_preprocessing/01_fastqc/sample_fastqs.tsv
+
+# FastQC and MultiQC reports
+01_preprocessing/01_fastqc/reports/
+
+# R analysis outputs
+**/analysis_outputs/
+
+# Job logs
+**/logs/
+*.out
+*.err
+
+# Rendered reports and their supporting files
+*.html
+**/*_files/libs/
+**/*_cache/
+
+# Serialised R objects and Loupe files
+*.rds
+*.cloupe
+
+# Quarto
+/.quarto/
+
+# R session artefacts
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS artefacts
+.DS_Store
+Thumbs.db

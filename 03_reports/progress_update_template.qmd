@@ -1,0 +1,73 @@
+---
+title: "scRNA-seq Analysis - Progress Update"
+subtitle: "Project name"
+date: today
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+---
+
+<!--
+A short slide deck for updating collaborators mid-project.
+
+Render with:
+    quarto render progress_update_template.qmd
+
+Replace every bracketed placeholder below. Keep it to a handful of slides;
+this is a status update, not the final report.
+
+Do not put access credentials in this file. It is committed to git and may be
+shared. Link to where results live and let people request access separately.
+-->
+
+## Project status
+
+**Preprocessing:** [not started / in progress / complete]
+
+**Per-group analysis:**
+
+- **[GROUP_1]** - [status, e.g. complete, QC looks good]
+- **[GROUP_2]** - [status]
+- **[GROUP_3]** - [status, note any failed samples here]
+
+**Integrated analysis:** [status]
+
+## Data quality
+
+- Median genes per cell: [value]
+- Median mitochondrial content: [value]%
+- Cells passing QC: [n] of [N] ([percentage]%)
+- V(D)J recovery: [percentage]% TCR+, [percentage]% BCR+
+- [Note any samples that underperformed, and whether they were dropped]
+
+## Preliminary findings
+
+- [Finding, with the cluster or cell type it relates to]
+- [Finding]
+- [Finding]
+
+Caveat: differential expression results so far are per-cell tests, which
+overstate significance. Treat these as exploratory until confirmed with a
+pseudobulk analysis across biological replicates.
+
+## Next steps
+
+- [Remaining processing]
+- Review cluster annotations - see the marker plots in the per-group reports
+- [Planned comparison or subset analysis]
+- [What you need from the collaborator, e.g. confirmation of cell type calls]
+
+## Questions for discussion
+
+- [Open question about experimental design or interpretation]
+- [Decision needed, e.g. which comparisons matter most]
+
+## Accessing results
+
+Reports and result tables: [location]
+
+Interactive exploration: download the `.cloupe` file from [location] and open
+it in [10x Loupe Browser](https://www.10xgenomics.com/products/loupe-browser).
+
+Contact [name/role] for access.
