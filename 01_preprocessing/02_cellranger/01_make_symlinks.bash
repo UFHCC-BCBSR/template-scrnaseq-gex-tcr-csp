@@ -65,6 +65,9 @@ for tag in $LIBRARY_TYPES; do
     echo "    WARNING: nothing matched *-${tag}_*_R[12]_001.fastq.gz" >&2
     echo "    Check that your filenames use this tag. Adjust the find pattern" >&2
     echo "    above if your core uses a different naming convention." >&2
+    echo "    Example filenames from the delivery:" >&2
+    find -L "$RAW_FASTQ_DIR" -type f -name '*.fastq.gz' 2>/dev/null \
+      | head -3 | sed 's|.*/|      |' >&2
   fi
 done
 
