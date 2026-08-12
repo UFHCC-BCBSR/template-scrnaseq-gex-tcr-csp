@@ -62,6 +62,7 @@ pseudobulk analysis across biological replicates.
 
 - [Open question about experimental design or interpretation]
 - [Decision needed, e.g. which comparisons matter most]
+- [Anything blocking progress]
 
 ## Accessing results
 
